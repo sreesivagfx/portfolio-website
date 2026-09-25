@@ -171,7 +171,7 @@ function runPreloader() {
 function initHeader() {
   const header = document.getElementById("siteHeader");
   if (!header) return;
-  const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 12);
+  const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 40);
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 }
@@ -304,6 +304,26 @@ function initStats() {
   stats.forEach((s) => io.observe(s));
 }
 
+/* ------------------------------- FLOATING CTA -------------------------------------- */
+function initFloatingCta() {
+  const cta = document.getElementById("floatingCta");
+  const contact = document.getElementById("contact");
+  const footer = document.querySelector(".site-footer");
+  if (!cta || !contact) return;
+
+  const state = { contact: false, footer: false };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const key = entry.target === contact ? "contact" : "footer";
+      state[key] = entry.isIntersecting;
+    });
+    cta.classList.toggle("is-hidden", state.contact || state.footer);
+  }, { threshold: 0.2 });
+
+  io.observe(contact);
+  if (footer) io.observe(footer);
+}
+
 /* ---------------------------------- MARQUEE DIRECTION ----------------------------- */
 function initMarqueeScrollDirection() {
   let lastY = window.scrollY;
@@ -339,4 +359,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initReveal();
   initStats();
   initMarqueeScrollDirection();
+  initFloatingCta();
 });
