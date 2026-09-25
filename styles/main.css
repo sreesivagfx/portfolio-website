@@ -211,6 +211,13 @@ body.using-custom-cursor, body.using-custom-cursor a, body.using-custom-cursor b
 }
 
 /* cursor-following ambient spotlight */
+#particleField {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
 .spotlight {
   position: fixed;
   inset: 0;
@@ -795,6 +802,28 @@ body.using-custom-cursor, body.using-custom-cursor a, body.using-custom-cursor b
 }
 
 /* -------------------------------- process ---------------------------------- */
+#process { overflow: hidden; }
+.flow-line {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.flow-line svg { width: 100%; height: 100%; display: block; }
+.flow-line-path {
+  stroke-dasharray: 10 16;
+  animation: flowDash 7s linear infinite;
+}
+.flow-line-path-2 {
+  stroke-dasharray: 6 14;
+  animation: flowDash 9s linear infinite reverse;
+}
+@keyframes flowDash {
+  to { stroke-dashoffset: -260; }
+}
+#process .container { position: relative; z-index: 1; }
+
 .process-list { display: flex; flex-direction: column; }
 .process-item {
   display: grid;
