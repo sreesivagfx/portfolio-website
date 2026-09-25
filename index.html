@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SREEGFX — Motion, Design &amp; Video Studio</title>
+<meta name="description" content="A multidisciplinary creative studio crafting motion graphics, video, brand identity, typography, AI video, K12 learning content, news packages and more." />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Preloader -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader-count" id="preloaderCount">0</div>
+  <div class="preloader-bar"><div class="preloader-bar-fill" id="preloaderFill"></div></div>
+  <div class="preloader-label">Loading studio</div>
+</div>
+
+<!-- Custom cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"><span id="cursorLabel"></span></div>
+
+<div class="spotlight" id="spotlight" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+
+<!-- Header -->
+<header class="site-header" id="siteHeader">
+  <a href="#top" class="brand magnetic">
+    <svg class="brand-mark" viewBox="0 0 64 64" fill="none">
+      <rect width="64" height="64" rx="16" fill="#12121a"/>
+      <circle cx="32" cy="32" r="20" stroke="url(#gradLogo)" stroke-width="3"/>
+      <path d="M27 23 L42 32 L27 41 Z" fill="url(#gradLogo)"/>
+      <defs>
+        <linearGradient id="gradLogo" x1="0" y1="0" x2="64" y2="64">
+          <stop offset="0%" stop-color="#7c5cff"/>
+          <stop offset="50%" stop-color="#33d6ff"/>
+          <stop offset="100%" stop-color="#ff5c8a"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    SREEGFX
+  </a>
+
+  <nav class="nav-desktop" aria-label="Primary">
+    <a href="#services" class="cursor-link">Expertise</a>
+    <a href="#work" class="cursor-link">Work</a>
+    <a href="#process" class="cursor-link">Process</a>
+    <a href="#about" class="cursor-link">About</a>
+  </nav>
+
+  <a href="#contact" class="nav-cta magnetic cursor-link">
+    Start a project
+    <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- Mobile nav -->
+<nav class="nav-mobile" id="navMobile" aria-label="Mobile">
+  <a href="#services" class="nav-mobile-link">Expertise</a>
+  <a href="#work" class="nav-mobile-link">Work</a>
+  <a href="#process" class="nav-mobile-link">Process</a>
+  <a href="#about" class="nav-mobile-link">About</a>
+  <a href="#contact" class="nav-mobile-link">Contact</a>
+</nav>
+
+<main id="main">
+  <a id="top"></a>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg-orb one" aria-hidden="true"></div>
+    <div class="hero-bg-orb two" aria-hidden="true"></div>
+
+    <div class="container hero-inner">
+      <div class="hero-eyebrow-row">
+        <span class="hero-status"><span class="dot-live"></span> Open for freelance &amp; collaborations</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line"><span style="--i:0">We design motion</span></span>
+        <span class="line"><span style="--i:1">that <em class="grad-text">tells stories</em></span></span>
+        <span class="line"><span style="--i:2">and brands that stick.</span></span>
+      </h1>
+
+      <p class="hero-sub">
+        A one-stop creative studio for video editing, motion graphics, brand identity,
+        typography, AI-generated video, educational content and broadcast-ready packages —
+        built with obsessive craft and a cursor that never sits still.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary magnetic cursor-link">
+          View the work
+          <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost magnetic cursor-link">Let's talk</a>
+      </div>
+
+      <div class="hero-tags">
+        <span>Motion Graphics</span>
+        <span>Brand Identity</span>
+        <span>AI Video</span>
+        <span>Broadcast Design</span>
+        <span>Typography</span>
+      </div>
+    </div>
+
+    <div class="scroll-cue"><div class="wheel"></div>Scroll</div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee" id="marqueeTop">
+    <div class="marquee-track" id="marqueeTrack">
+      <!-- duplicated in JS for seamless loop -->
+      <span class="marquee-item">Motion Graphics <span class="divider">✦</span></span>
+      <span class="marquee-item accent">Video Editing <span class="divider">✦</span></span>
+      <span class="marquee-item">Brand Identity <span class="divider">✦</span></span>
+      <span class="marquee-item accent">Typography <span class="divider">✦</span></span>
+      <span class="marquee-item">AI Videos <span class="divider">✦</span></span>
+      <span class="marquee-item accent">News Packages <span class="divider">✦</span></span>
+      <span class="marquee-item">K12 Learning <span class="divider">✦</span></span>
+      <span class="marquee-item accent">Logo Design <span class="divider">✦</span></span>
+    </div>
+  </div>
+
+  <!-- Services / Expertise -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="eyebrow">What I do</span>
+          <h2 class="section-title" style="margin-top:16px">A full creative pipeline, <span class="grad-text">under one roof.</span></h2>
+        </div>
+        <p class="section-desc">From first sketch to final broadcast master — thirteen disciplines, one consistent voice. More categories land here as the studio grows.</p>
+      </div>
+
+      <div class="services-grid" id="servicesGrid">
+        <!-- populated by JS from SERVICES data -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section class="section" id="work">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="eyebrow">Selected work</span>
+          <h2 class="section-title" style="margin-top:16px">Recent <span class="grad-text">projects &amp; drops.</span></h2>
+        </div>
+        <p class="section-desc">Placeholder project cards — swap these for real thumbnails and case studies any time by editing <code>scripts/main.js</code>.</p>
+      </div>
+
+      <div class="work-filters" id="workFilters"></div>
+      <div class="work-grid" id="workGrid"></div>
+
+      <div class="work-more-wrap">
+        <a href="#contact" class="btn btn-ghost magnetic cursor-link">Want to be featured here? Let's build it</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee reverse -->
+  <div class="marquee reverse" id="marqueeBottom">
+    <div class="marquee-track" id="marqueeTrack2">
+      <span class="marquee-item">Infographics <span class="divider">✦</span></span>
+      <span class="marquee-item accent">Science Lab Experiments <span class="divider">✦</span></span>
+      <span class="marquee-item">Stories &amp; Rhymes <span class="divider">✦</span></span>
+      <span class="marquee-item accent">Media &amp; Broadcast <span class="divider">✦</span></span>
+      <span class="marquee-item">Graphic Design <span class="divider">✦</span></span>
+      <span class="marquee-item accent">Logos <span class="divider">✦</span></span>
+    </div>
+  </div>
+
+  <!-- Process -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <span class="eyebrow">How it works</span>
+          <h2 class="section-title" style="margin-top:16px">From brief to <span class="grad-text">broadcast.</span></h2>
+        </div>
+      </div>
+
+      <div class="process-list" id="processList"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <div class="about-text" data-reveal>
+        <span class="eyebrow">About the studio</span>
+        <p style="margin-top:22px">
+          I'm <strong>Sree</strong>, a motion designer and video editor who treats every brief —
+          whether it's a 15-second broadcast bumper or a full brand system — with the same
+          obsessive attention to timing, typography and color.
+        </p>
+        <p>
+          The studio works across <strong>motion graphics, brand identity, AI-assisted video,
+          K12 learning content, news packaging and science storytelling</strong> — built for
+          clients who want work that feels handcrafted, not templated.
+        </p>
+      </div>
+
+      <div class="stats-grid" data-reveal>
+        <div class="stat-card">
+          <div class="stat-num" data-count="120">0</div>
+          <div class="stat-label">Projects delivered</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-count="13">0</div>
+          <div class="stat-label">Creative disciplines</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-count="40">0</div>
+          <div class="stat-label">Happy clients</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-count="5">0</div>
+          <div class="stat-label">Years crafting motion</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <span class="eyebrow" style="justify-content:center">Get in touch</span>
+      <h2 class="contact-title" style="margin-top:22px">Got a project?<br/><span class="grad-text">Let's make it move.</span></h2>
+      <a href="mailto:sreesivagfx@gmail.com" class="contact-email magnetic cursor-link">sreesivagfx@gmail.com</a>
+
+      <div class="contact-socials">
+        <a href="#" class="magnetic cursor-link">Instagram</a>
+        <a href="#" class="magnetic cursor-link">Behance</a>
+        <a href="#" class="magnetic cursor-link">YouTube</a>
+        <a href="#" class="magnetic cursor-link">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span>&copy; <span id="year"></span> SREEGFX Studio. Designed &amp; built with motion in mind.</span>
+  <a href="#top" class="back-to-top cursor-link">Back to top ↑</a>
+</footer>
+
+<script src="scripts/cursor.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>
