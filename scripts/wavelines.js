@@ -25,10 +25,11 @@
     let width = 0;
     let height = 0;
     let dpr = 1;
+    let isVisible = true;
 
     function resize() {
       const rect = canvas.getBoundingClientRect();
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       width = rect.width;
       height = rect.height;
       canvas.width = Math.round(width * dpr);
@@ -45,7 +46,7 @@
       ctx.clearRect(0, 0, width, height);
       const midY = height / 2;
       const amp = height * opts.amplitude;
-      const steps = 90;
+      const steps = 56;
 
       for (let i = 0; i < opts.lines; i++) {
         const p = i / (opts.lines - 1); // 0..1 across the band
@@ -73,14 +74,24 @@
     }
 
     function loop() {
-      t += opts.speed * 0.008;
-      draw();
+      if (isVisible && !document.hidden) {
+        t += opts.speed * 0.008;
+        draw();
+      }
       if (!prefersReducedMotion) requestAnimationFrame(loop);
     }
 
     resize();
     draw();
     window.addEventListener("resize", () => { resize(); draw(); });
+
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => { isVisible = entry.isIntersecting; });
+      }, { threshold: 0.01 });
+      io.observe(canvas);
+    }
+
     if (!prefersReducedMotion) requestAnimationFrame(loop);
   }
 

@@ -12,8 +12,8 @@
   const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
 
   const COLORS = ["91,110,255", "34,211,238"];
-  const LINK_DIST = 130;
-  const CURSOR_LINK_DIST = 170;
+  const LINK_DIST = 115;
+  const CURSOR_LINK_DIST = 160;
 
   let width = 0;
   let height = 0;
@@ -22,7 +22,7 @@
   const mouse = { x: 0, y: 0, active: false };
 
   function resize() {
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    dpr = Math.min(window.devicePixelRatio || 1, 1.5);
     width = window.innerWidth;
     height = window.innerHeight;
     canvas.width = Math.round(width * dpr);
@@ -34,7 +34,7 @@
 
   function createParticles() {
     const area = width * height;
-    const count = Math.min(100, Math.max(28, Math.round(area / 18000)));
+    const count = Math.min(60, Math.max(24, Math.round(area / 24000)));
     particles = Array.from({ length: count }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
@@ -107,7 +107,7 @@
   }
 
   function loop() {
-    drawFrame();
+    if (!document.hidden) drawFrame();
     if (!prefersReducedMotion) requestAnimationFrame(loop);
   }
 
