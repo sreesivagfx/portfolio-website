@@ -395,7 +395,7 @@ body.using-custom-cursor, body.using-custom-cursor a, body.using-custom-cursor b
 .nav-mobile.is-open { transform: translateY(0); }
 .nav-mobile a {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 8vw, 3rem);
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
   font-weight: 600;
 }
 
