@@ -76,6 +76,7 @@
   <section class="hero">
     <div class="hero-bg-orb one" aria-hidden="true"></div>
     <div class="hero-bg-orb two" aria-hidden="true"></div>
+    <canvas id="heroWaveLines" class="wave-lines-canvas wave-lines-bottom" aria-hidden="true"></canvas>
 
     <div class="container hero-inner">
       <div class="hero-eyebrow-row">
@@ -245,6 +246,7 @@
 
   <!-- Contact -->
   <section class="section contact-section" id="contact">
+    <canvas id="contactWaveLines" class="wave-lines-canvas" aria-hidden="true"></canvas>
     <div class="container">
       <span class="eyebrow" style="justify-content:center">Get in touch</span>
       <h2 class="contact-title" style="margin-top:22px">Got a project?<br/><span class="grad-text">Let's make it move.</span></h2>
@@ -272,6 +274,11 @@
 </a>
 
 <script src="scripts/particles.js"></script>
+<script src="scripts/wavelines.js"></script>
+<script>
+  initWaveLines("heroWaveLines", { lines: 30, amplitude: 0.32, frequency: 1.4, lineOpacity: 0.45 });
+  initWaveLines("contactWaveLines", { lines: 30, amplitude: 0.22, frequency: 1.6 });
+</script>
 <script src="scripts/cursor.js"></script>
 <script src="scripts/main.js"></script>
 </body>
