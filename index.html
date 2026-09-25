@@ -14,6 +14,13 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
+<!-- Ambient background motion: slow drifting glow, sitewide -->
+<div class="ambient-glow" aria-hidden="true">
+  <span class="glow g1"></span>
+  <span class="glow g2"></span>
+  <span class="glow g3"></span>
+</div>
+
 <!-- Particle field background (behind all content) -->
 <canvas id="particleField" aria-hidden="true"></canvas>
 
@@ -74,8 +81,6 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-bg-orb one" aria-hidden="true"></div>
-    <div class="hero-bg-orb two" aria-hidden="true"></div>
     <canvas id="heroWaveLines" class="wave-lines-canvas wave-lines-bottom" aria-hidden="true"></canvas>
 
     <div class="container hero-inner">
