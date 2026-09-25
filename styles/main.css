@@ -13,14 +13,12 @@
   --text-dim: #9a9aa8;
   --text-faint: #6a6a78;
 
-  --accent-1: #7c5cff; /* violet */
-  --accent-2: #33d6ff; /* cyan */
-  --accent-3: #ff5c8a; /* pink */
-  --accent-4: #ffd166; /* amber */
+  --accent-1: #5b6eff; /* indigo */
+  --accent-2: #22d3ee; /* teal-cyan */
+  --accent-warm: #fb7185; /* rose — used sparingly, as a single accent moment */
 
   --grad-primary: linear-gradient(120deg, var(--accent-1), var(--accent-2));
-  --grad-warm: linear-gradient(120deg, var(--accent-3), var(--accent-4));
-  --grad-full: linear-gradient(120deg, var(--accent-1), var(--accent-2) 45%, var(--accent-3) 85%);
+  --grad-full: linear-gradient(120deg, var(--accent-1), var(--accent-2));
 
   --font-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
@@ -220,8 +218,8 @@ body.using-custom-cursor, body.using-custom-cursor a, body.using-custom-cursor b
   pointer-events: none;
   background: radial-gradient(
     480px circle at var(--mx) var(--my),
-    rgba(124, 92, 255, 0.16),
-    rgba(51, 214, 255, 0.08) 35%,
+    rgba(91, 110, 255, 0.16),
+    rgba(34, 211, 238, 0.08) 35%,
     transparent 65%
   );
   transition: opacity 0.4s ease;
@@ -638,7 +636,7 @@ body.using-custom-cursor, body.using-custom-cursor a, body.using-custom-cursor b
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(220px circle at var(--px, 50%) var(--py, 50%), rgba(124, 92, 255, 0.22), transparent 70%);
+  background: radial-gradient(220px circle at var(--px, 50%) var(--py, 50%), rgba(91, 110, 255, 0.22), transparent 70%);
   opacity: 0;
   transition: opacity 0.35s ease;
   pointer-events: none;
@@ -746,8 +744,8 @@ body.using-custom-cursor, body.using-custom-cursor a, body.using-custom-cursor b
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 40%),
-    repeating-linear-gradient(115deg, rgba(255,255,255,0.06) 0 2px, transparent 2px 26px);
+    radial-gradient(circle at 22% 18%, rgba(255,255,255,0.16), transparent 45%),
+    radial-gradient(circle at 85% 90%, rgba(0,0,0,0.25), transparent 50%);
 }
 
 .work-overlay {

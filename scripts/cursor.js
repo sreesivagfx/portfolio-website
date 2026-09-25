@@ -19,9 +19,12 @@
 
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
+  let dotX = mouseX;
+  let dotY = mouseY;
   let ringX = mouseX;
   let ringY = mouseY;
-  const ease = prefersReducedMotion ? 1 : 0.16;
+  const dotEase = prefersReducedMotion ? 1 : 0.45;
+  const ringEase = prefersReducedMotion ? 1 : 0.16;
 
   let visible = false;
 
@@ -48,9 +51,21 @@
   window.addEventListener("mouseup", () => ring.classList.remove("is-active"));
 
   function raf() {
-    ringX += (mouseX - ringX) * ease;
-    ringY += (mouseY - ringY) * ease;
-    dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+    const prevDotX = dotX;
+    const prevDotY = dotY;
+    dotX += (mouseX - dotX) * dotEase;
+    dotY += (mouseY - dotY) * dotEase;
+    ringX += (mouseX - ringX) * ringEase;
+    ringY += (mouseY - ringY) * ringEase;
+
+    // Stretch the dot along its travel direction so fast/long swipes read as motion, not a teleport.
+    const dx = dotX - prevDotX;
+    const dy = dotY - prevDotY;
+    const speed = Math.min(Math.hypot(dx, dy), 40);
+    const stretch = prefersReducedMotion ? 1 : 1 + speed / 22;
+    const angle = speed > 0.5 ? Math.atan2(dy, dx) * (180 / Math.PI) : 0;
+
+    dot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%) rotate(${angle}deg) scale(${stretch}, ${1 / Math.sqrt(stretch)})`;
     ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
     requestAnimationFrame(raf);
   }

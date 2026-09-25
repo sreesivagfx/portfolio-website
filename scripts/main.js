@@ -41,14 +41,14 @@ const SERVICES = [
 /* ---------------------------------- WORK ----------------------------------- */
 /* Placeholder projects — replace title/meta/tag or add new objects as real work comes in. */
 const WORK = [
-  { title: "Aurora Rebrand", tag: "Brand Identity", meta: "Identity system · 2025", grad: "linear-gradient(135deg,#7c5cff,#33d6ff)", big: true },
-  { title: "Nightline News Open", tag: "News Packages", meta: "Broadcast design · 2025", grad: "linear-gradient(135deg,#ff5c8a,#ffd166)" },
-  { title: "Orbit Explainer", tag: "Motion Graphics", meta: "Animation · 2024", grad: "linear-gradient(135deg,#33d6ff,#7c5cff)" },
-  { title: "Little Sparks: ABC Rhymes", tag: "Stories & Rhymes", meta: "K12 series · 2024", grad: "linear-gradient(135deg,#ffd166,#ff5c8a)" },
-  { title: "Photosynthesis Lab", tag: "Science Lab Experiments", meta: "Explainer video · 2024", grad: "linear-gradient(135deg,#35e07f,#33d6ff)" },
-  { title: "Nova Type Specimen", tag: "Typography", meta: "Type design · 2023", grad: "linear-gradient(135deg,#7c5cff,#ff5c8a)", big: true },
-  { title: "Pulse AI Reel", tag: "AI Video Production", meta: "AI-generated · 2025", grad: "linear-gradient(135deg,#ff5c8a,#7c5cff)" },
-  { title: "Census in Motion", tag: "Infographics", meta: "Data animation · 2023", grad: "linear-gradient(135deg,#33d6ff,#35e07f)" },
+  { title: "Aurora Rebrand", tag: "Brand Identity", meta: "Identity system · 2025", grad: "linear-gradient(135deg,#4c3fd6,#22d3ee)", big: true },
+  { title: "Nightline News Open", tag: "News Packages", meta: "Broadcast design · 2025", grad: "linear-gradient(135deg,#1e3a8a,#3b82f6)" },
+  { title: "Orbit Explainer", tag: "Motion Graphics", meta: "Animation · 2024", grad: "linear-gradient(135deg,#4c1d95,#5b6eff)" },
+  { title: "Little Sparks: ABC Rhymes", tag: "Stories & Rhymes", meta: "K12 series · 2024", grad: "linear-gradient(135deg,#fb7185,#f97316)" },
+  { title: "Photosynthesis Lab", tag: "Science Lab Experiments", meta: "Explainer video · 2024", grad: "linear-gradient(135deg,#0f766e,#10b981)" },
+  { title: "Nova Type Specimen", tag: "Typography", meta: "Type design · 2023", grad: "linear-gradient(135deg,#22d3ee,#5b6eff)", big: true },
+  { title: "Pulse AI Reel", tag: "AI Video Production", meta: "AI-generated · 2025", grad: "linear-gradient(135deg,#f97316,#fb7185)" },
+  { title: "Census in Motion", tag: "Infographics", meta: "Data animation · 2023", grad: "linear-gradient(135deg,#10b981,#0f766e)" },
 ];
 
 const PROCESS = [
