@@ -1,42 +1,9 @@
 /* ==========================================================================
    Main interactions + content data
-   Add more services or work items by editing the SERVICES / WORK arrays below.
+   Services are hand-authored as illustrated sections directly in index.html
+   (#services .feature-row) since each one has a bespoke SVG scene. Add more
+   work items by editing the WORK array below.
    ========================================================================== */
-
-/* ------------------------------- ICON SET -------------------------------- */
-const ICONS = {
-  video: `<svg viewBox="0 0 24 24" fill="none"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h7A2.5 2.5 0 0 1 15 6.5v11A2.5 2.5 0 0 1 12.5 20h-7A2.5 2.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.5"/><path d="M15 9.5 20.2 6a.8.8 0 0 1 1.3.6v10.8a.8.8 0 0 1-1.3.6L15 14.5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>`,
-  motion: `<svg viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="3.2" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="7" r="2.2" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="17" r="2.2" stroke="currentColor" stroke-width="1.5"/><path d="M9.8 10.5 14.6 8M9.8 13.5l4.8 2.5" stroke="currentColor" stroke-width="1.5"/></svg>`,
-  graphic: `<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="9" r="1.6" stroke="currentColor" stroke-width="1.5"/><path d="M4 15.5 9 11l3 3 3.5-4L21 15" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 20h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
-  type: `<svg viewBox="0 0 24 24" fill="none"><path d="M5 6h14M9 6v13M15 6v13M6.5 19h5M13.5 19h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
-  info: `<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="13" width="4" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="10" y="8" width="4" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="17" y="4" width="4" height="16" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>`,
-  brand: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4 7v6c0 4.4 3.2 7.6 8 8 4.8-.4 8-3.6 8-8V7l-8-4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12.5 11 14.5 15.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-  broadcast: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 21V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 11 9 4M12 11l3-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 8a6 6 0 0 1 11 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M3.5 5a10.5 10.5 0 0 1 17 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
-  ai: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5 13.9 9l5.6 1.9-5.6 1.9L12 18.5l-1.9-5.7L4.5 10.9 10.1 9 12 3.5Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M19 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z" fill="currentColor"/></svg>`,
-  k12: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 5 3 9l9 4 9-4-9-4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 11.5V16c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5v-4.5" stroke="currentColor" stroke-width="1.5"/></svg>`,
-  stories: `<svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5v-13Z" stroke="currentColor" stroke-width="1.5"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5v-13Z" stroke="currentColor" stroke-width="1.5"/></svg>`,
-  lab: `<svg viewBox="0 0 24 24" fill="none"><path d="M9 3h6M10 3v6.5L4.8 18a2 2 0 0 0 1.7 3h11a2 2 0 0 0 1.7-3L14 9.5V3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 15h8" stroke="currentColor" stroke-width="1.5"/></svg>`,
-  news: `<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M7 9h6M7 12.5h10M7 16h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
-  logo: `<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.5"/><path d="M12 7.5 14.6 12 12 16.5 9.4 12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>`,
-};
-
-/* -------------------------------- SERVICES -------------------------------- */
-/* Add a new discipline any time by pushing another object into this array. */
-const SERVICES = [
-  { icon: "video", title: "Video Editing & Development", desc: "Narrative-driven edits, pacing and sound design for films, ads and social content." },
-  { icon: "motion", title: "Motion Graphics", desc: "Kinetic type, animated systems and explainer sequences built frame by frame." },
-  { icon: "graphic", title: "Graphic Design", desc: "Layouts, posters and visual systems that hold together across every touchpoint." },
-  { icon: "type", title: "Typography", desc: "Custom lettering and type systems that give a brand its distinct voice." },
-  { icon: "info", title: "Infographics", desc: "Complex data turned into clear, animated visual stories." },
-  { icon: "brand", title: "Brand Identity", desc: "Logo systems, color, type and guidelines built to scale with a business." },
-  { icon: "broadcast", title: "Media & Broadcast", desc: "On-air packages, lower thirds and channel branding for TV and streaming." },
-  { icon: "ai", title: "AI Video Production", desc: "AI-assisted generation, editing and finishing for fast, scalable video output." },
-  { icon: "k12", title: "K-12 Learning Videos", desc: "Curriculum-aligned animated lessons that make concepts stick for young learners." },
-  { icon: "stories", title: "Stories & Rhymes", desc: "Illustrated storytelling and rhyme videos crafted for early childhood audiences." },
-  { icon: "lab", title: "Science Lab Experiments", desc: "Step-by-step experiment videos and diagrams that make science tangible." },
-  { icon: "news", title: "News Channel Packages", desc: "Full broadcast identity — stingers, tickers, studio graphics and show opens." },
-  { icon: "logo", title: "Logo Design", desc: "Distinct, versatile marks designed to work from favicon to billboard." },
-];
 
 /* ---------------------------------- WORK ----------------------------------- */
 /* Placeholder projects — replace title/meta/tag or add new objects as real work comes in. */
@@ -342,7 +309,6 @@ function initMarqueeScrollDirection() {
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  renderServices();
   renderWorkFilters();
   renderWork();
   renderProcess();

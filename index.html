@@ -41,20 +41,19 @@
 <!-- Header -->
 <header class="site-header" id="siteHeader">
   <a href="#top" class="brand magnetic">
-    <svg class="brand-mark" viewBox="0 0 64 64" fill="none">
-      <rect width="64" height="64" rx="16" fill="#12121a"/>
-      <path d="M45 21c-1.5-6-9-9-16.5-7.3C21 15.3 17 19.5 18 24s6.5 6 13.5 7c8 1 14.5 3.7 13 9.7-1.5 6-9.5 9-17 7.3-6-1.4-10-5-10.5-9.3"
-        stroke="url(#gradLogo)" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-      <circle cx="18" cy="24" r="2.4" fill="#22d3ee" />
-      <circle cx="44.5" cy="40.7" r="2.4" fill="#5b6eff" />
+    <svg class="brand-mark" viewBox="10 6 42 42" fill="none">
+      <path class="logo-stroke" d="M45 21c-1.5-6-9-9-16.5-7.3C21 15.3 17 19.5 18 24s6.5 6 13.5 7c8 1 14.5 3.7 13 9.7-1.5 6-9.5 9-17 7.3-6-1.4-10-5-10.5-9.3"
+        stroke="url(#gradLogo)" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <circle class="logo-node logo-node-a" cx="18" cy="24" r="3.2" fill="#22d3ee" />
+      <circle class="logo-node logo-node-b" cx="44.5" cy="40.7" r="3.2" fill="#5b6eff" />
       <defs>
-        <linearGradient id="gradLogo" x1="0" y1="0" x2="64" y2="64">
+        <linearGradient id="gradLogo" x1="12" y1="6" x2="52" y2="48">
           <stop offset="0%" stop-color="#5b6eff"/>
           <stop offset="100%" stop-color="#22d3ee"/>
         </linearGradient>
       </defs>
     </svg>
-    SREEGFX
+    <span class="brand-word"><span class="brand-word-a">SREE</span><span class="brand-word-b">GFX</span></span>
   </a>
 
   <nav class="nav-desktop" aria-label="Primary">
@@ -148,8 +147,222 @@
         <p class="section-desc">From first sketch to final broadcast master — thirteen disciplines, one consistent voice. More categories land here as the studio grows.</p>
       </div>
 
-      <div class="services-grid" id="servicesGrid">
-        <!-- populated by JS from SERVICES data -->
+      <div class="feature-list">
+
+        <div class="feature-row" data-reveal>
+          <div class="feature-illo"><div class="illo-stage"><svg class="illo-svg" viewBox="0 0 200 160">
+            <rect x="40" y="18" width="120" height="82" rx="6" fill="var(--paper)"/>
+            <rect x="46" y="24" width="108" height="64" rx="2" fill="var(--ink)"/>
+            <path d="M92 46 L92 66 L110 56 Z" fill="var(--accent-2)"/>
+            <rect x="90" y="100" width="20" height="10" fill="var(--paper)"/>
+            <rect x="65" y="110" width="70" height="8" rx="4" fill="var(--paper)"/>
+            <rect x="50" y="124" width="100" height="10" rx="5" fill="#2a2a38"/>
+            <rect x="50" y="124" width="60" height="10" rx="5" fill="var(--accent-1)"/>
+            <g class="illo-slide"><circle cx="110" cy="129" r="6" fill="var(--accent-2)"/></g>
+          </svg></div></div>
+          <div class="feature-text">
+            <span class="feature-index">01</span>
+            <h3>Video Editing &amp; Development</h3>
+            <p>Narrative-driven edits, pacing and sound design for films, ads and social content.</p>
+          </div>
+        </div>
+
+        <div class="feature-row reverse" data-reveal>
+          <div class="feature-illo"><div class="illo-stage"><svg class="illo-svg" viewBox="0 0 200 160">
+            <g class="illo-spin">
+              <line x1="100" y1="80" x2="62" y2="55" stroke="#3a3a4a" stroke-width="2"/>
+              <line x1="100" y1="80" x2="140" y2="55" stroke="#3a3a4a" stroke-width="2"/>
+              <line x1="100" y1="80" x2="100" y2="120" stroke="#3a3a4a" stroke-width="2"/>
+              <circle cx="62" cy="55" r="14" fill="var(--accent-1)"/>
+              <polygon points="140,42 152,64 128,64" fill="var(--accent-2)"/>
+              <rect x="88" y="108" width="24" height="24" rx="4" fill="var(--paper)"/>
+            </g>
+            <circle cx="100" cy="80" r="4" fill="var(--paper)"/>
+          </svg></div></div>
+          <div class="feature-text">
+            <span class="feature-index">02</span>
+            <h3>Motion Graphics</h3>
+            <p>Kinetic type, animated systems and explainer sequences built frame by frame.</p>
+          </div>
+        </div>
+
+        <div class="feature-row" data-reveal>
+          <div class="feature-illo"><div class="illo-stage"><svg class="illo-svg" viewBox="0 0 200 160">
+            <rect x="45" y="24" width="110" height="96" rx="6" fill="var(--paper)"/>
+            <rect x="57" y="36" width="50" height="40" fill="var(--accent-1)" opacity="0.85"/>
+            <circle cx="82" cy="56" r="8" fill="var(--paper)"/>
+            <rect x="57" y="86" width="86" height="6" rx="3" fill="var(--ink)" opacity="0.5"/>
+            <rect x="57" y="98" width="60" height="6" rx="3" fill="var(--ink)" opacity="0.3"/>
+            <line x1="118" y1="40" x2="145" y2="68" stroke="var(--ink)" stroke-width="2"/>
+            <circle cx="145" cy="68" r="5" fill="var(--accent-2)"/>
+            <rect class="illo-pulse" x="57" y="36" width="50" height="40" fill="none" stroke="var(--accent-2)" stroke-width="2" stroke-dasharray="5 4"/>
+          </svg></div></div>
+          <div class="feature-text">
+            <span class="feature-index">03</span>
+            <h3>Graphic Design</h3>
+            <p>Layouts, posters and visual systems that hold together across every touchpoint.</p>
+          </div>
+        </div>
+
+        <div class="feature-row reverse" data-reveal>
+          <div class="feature-illo"><div class="illo-stage"><svg class="illo-svg" viewBox="0 0 200 160">
+            <text x="35" y="112" font-family="Georgia, serif" font-size="88" fill="var(--paper)">Aa</text>
+            <rect class="illo-blink" x="150" y="40" width="5" height="70" fill="var(--accent-2)"/>
+            <line x1="35" y1="130" x2="165" y2="130" stroke="#3a3a4a" stroke-width="2"/>
+            <line x1="45" y1="130" x2="45" y2="138" stroke="#3a3a4a" stroke-width="2"/>
+            <line x1="100" y1="130" x2="100" y2="138" stroke="#3a3a4a" stroke-width="2"/>
+            <line x1="155" y1="130" x2="155" y2="138" stroke="#3a3a4a" stroke-width="2"/>
+          </svg></div></div>
+          <div class="feature-text">
+            <span class="feature-index">04</span>
+            <h3>Typography</h3>
+            <p>Custom lettering and type systems that give a brand its distinct voice.</p>
+          </div>
+        </div>
+
+        <div class="feature-row" data-reveal>
+          <div class="feature-illo"><div class="illo-stage"><svg class="illo-svg" viewBox="0 0 200 160">
+            <line x1="40" y1="128" x2="160" y2="128" stroke="#3a3a4a" stroke-width="2"/>
+            <rect class="illo-bar" x="52" y="70" width="20" height="58" fill="var(--accent-1)"/>
+            <rect class="illo-bar" x="82" y="50" width="20" height="78" fill="var(--paper)" style="animation-delay:.2s"/>
+            <rect class="illo-bar" x="112" y="86" width="20" height="42" fill="var(--accent-2)" style="animation-delay:.4s"/>
+            <rect class="illo-bar" x="142" y="60" width="12" height="68" fill="var(--paper)" opacity="0.5" style="animation-delay:.6s"/>
+          </svg></div></div>
+          <div class="feature-text">
+            <span class="feature-index">05</span>
+            <h3>Infographics</h3>
+            <p>Complex data turned into clear, animated visual stories.</p>
+          </div>
+        </div>
+
+        <div class="feature-row reverse" data-reveal>
+          <div class="feature-illo"><div class="illo-stage"><svg class="illo-svg" viewBox="0 0 200 160">
+            <path class="illo-pulse" d="M100 20 L150 40 V80 C150 112 128 132 100 140 C72 132 50 112 50 80 V40 Z" fill="none" stroke="var(--accent-1)" stroke-width="2" opacity="0.5"/>
+            <path d="M100 30 L142 47 V80 C142 106 124 122 100 130 C76 122 58 106 58 80 V47 Z" fill="var(--paper)"/>
+            <circle cx="100" cy="80" r="16" fill="none" stroke="var(--ink)" stroke-width="3"/>
+            <path d="M94 72 L110 80 L94 88 Z" fill="var(--ink)"/>
+            <circle cx="80" cy="115" r="6" fill="var(--accent-1)"/>
+            <circle cx="100" cy="115" r="6" fill="var(--accent-2)"/>
+            <circle cx="120" cy="115" r="6" fill="var(--accent-warm)"/>
+          </svg></div></div>
+          <div class="feature-text">
+            <span class="feature-index">06</span>
+            <h3>Brand Identity</h3>
+            <p>Logo systems, color, type and guidelines built to scale with a business.</p>
+          </div>
+        </div>
+
+        <div class="feature-row" data-reveal>
+          <div class="feature-illo"><div class="illo-stage"><svg class="illo-svg" viewBox="0 0 200 160">
+            <line x1="100" y1="60" x2="100" y2="130" stroke="var(--paper)" stroke-width="4"/>
+            <polygon points="100,130 84,140 116,140" fill="var(--paper)"/>
+            <circle cx="100" cy="55" r="6" fill="var(--accent-2)"/>
+            <path class="illo-ripple" d="M78 55a22 22 0 0 1 44 0" fill="none" stroke="var(--accent-1)" stroke-width="3"/>
+            <path class="illo-ripple" d="M64 55a36 36 0 0 1 72 0" fill="none" stroke="var(--accent-2)" stroke-width="2" style="animation-delay:.6s"/>
+            <path class="illo-ripple" d="M50 55a50 50 0 0 1 100 0" fill="none" stroke="var(--accent-1)" stroke-width="2" style="animation-delay:1.2s"/>
+          </svg></div></div>
+          <div class="feature-text">
+            <span class="feature-index">07</span>
+            <h3>Media &amp; Broadcast</h3>
+            <p>On-air packages, lower thirds and channel branding for TV and streaming.</p>
+          </div>
+        </div>
+
+        <div class="feature-row reverse" data-reveal>
+          <div class="feature-illo"><div class="illo-stage"><svg class="illo-svg" viewBox="0 0 200 160">
+            <g class="illo-orbit">
+              <circle cx="140" cy="80" r="5" fill="var(--accent-2)"/>
+              <circle cx="60" cy="80" r="4" fill="var(--accent-1)"/>
+              <circle cx="100" cy="40" r="4" fill="var(--accent-warm)"/>
+              <circle cx="100" cy="120" r="4" fill="var(--accent-2)"/>
+            </g>
+            <path class="illo-pulse" d="M100 45 L110 72 L138 80 L110 88 L100 115 L90 88 L62 80 L90 72 Z" fill="var(--paper)"/>
+          </svg></div></div>
+          <div class="feature-text">
+            <span class="feature-index">08</span>
+            <h3>AI Video Production</h3>
+            <p>AI-assisted generation, editing and finishing for fast, scalable video output.</p>
+          </div>
+        </div>
+
+        <div class="feature-row" data-reveal>
+          <div class="feature-illo"><div class="illo-stage"><svg class="illo-svg" viewBox="0 0 200 160">
+            <path d="M100 40 C88 32 65 30 50 34 V108 C65 104 88 106 100 114 Z" fill="var(--paper)"/>
+            <path d="M100 40 C112 32 135 30 150 34 V108 C135 104 112 106 100 114 Z" fill="var(--paper)" opacity="0.85"/>
+            <path d="M114 62 L138 74 L114 86 Z" fill="var(--accent-2)"/>
+            <g class="illo-float"><path d="M140 30 l3 7 7 1-5 5 1 7-6-4-6 4 1-7-5-5 7-1Z" fill="var(--accent-warm)"/></g>
+          </svg></div></div>
+          <div class="feature-text">
+            <span class="feature-index">09</span>
+            <h3>K-12 Learning Videos</h3>
+            <p>Curriculum-aligned animated lessons that make concepts stick for young learners.</p>
+          </div>
+        </div>
+
+        <div class="feature-row reverse" data-reveal>
+          <div class="feature-illo"><div class="illo-stage"><svg class="illo-svg" viewBox="0 0 200 160">
+            <path d="M100 46 C90 40 68 38 55 41 V102 C68 99 90 101 100 107 Z" fill="var(--paper)"/>
+            <path d="M100 46 C110 40 132 38 145 41 V102 C132 99 110 101 100 107 Z" fill="var(--paper)" opacity="0.85"/>
+            <g class="illo-float"><path d="M62 30 l2.4 5.6 5.6.8-4 4 .8 5.6-4.8-3.2-4.8 3.2.8-5.6-4-4 5.6-.8Z" fill="var(--accent-2)"/></g>
+            <g class="illo-float" style="animation-delay:.6s"><circle cx="130" cy="28" r="4" fill="var(--accent-1)"/></g>
+            <g class="illo-float" style="animation-delay:1.2s"><path d="M148 40 l2 4.6 4.6.7-3.3 3.3.7 4.6-4-2.6-4 2.6.7-4.6-3.3-3.3 4.6-.7Z" fill="var(--accent-warm)"/></g>
+          </svg></div></div>
+          <div class="feature-text">
+            <span class="feature-index">10</span>
+            <h3>Stories &amp; Rhymes</h3>
+            <p>Illustrated storytelling and rhyme videos crafted for early childhood audiences.</p>
+          </div>
+        </div>
+
+        <div class="feature-row" data-reveal>
+          <div class="feature-illo"><div class="illo-stage"><svg class="illo-svg" viewBox="0 0 200 160">
+            <path d="M90 30 h20 v34 l24 46 a10 10 0 0 1 -9 15 h-50 a10 10 0 0 1 -9 -15 l24 -46 Z" fill="none" stroke="var(--paper)" stroke-width="3"/>
+            <path d="M75 92 h50 l12 22 a10 10 0 0 1 -9 15 h-56 a10 10 0 0 1 -9 -15 Z" fill="var(--accent-1)" opacity="0.8"/>
+            <g class="illo-bubble"><circle cx="92" cy="110" r="3.5" fill="var(--paper)"/></g>
+            <g class="illo-bubble" style="animation-delay:.6s"><circle cx="105" cy="118" r="3" fill="var(--paper)"/></g>
+            <g class="illo-bubble" style="animation-delay:1.2s"><circle cx="112" cy="108" r="2.5" fill="var(--paper)"/></g>
+          </svg></div></div>
+          <div class="feature-text">
+            <span class="feature-index">11</span>
+            <h3>Science Lab Experiments</h3>
+            <p>Step-by-step experiment videos and diagrams that make science tangible.</p>
+          </div>
+        </div>
+
+        <div class="feature-row reverse" data-reveal>
+          <div class="feature-illo"><div class="illo-stage"><svg class="illo-svg" viewBox="0 0 200 160">
+            <rect x="40" y="24" width="120" height="80" rx="6" fill="var(--ink)" stroke="var(--paper)" stroke-width="2"/>
+            <circle cx="100" cy="60" r="13" fill="none" stroke="var(--paper)" stroke-width="2" opacity="0.6"/>
+            <g class="illo-pulse"><circle cx="100" cy="60" r="6" fill="var(--accent-warm)"/></g>
+            <g class="illo-slide">
+              <rect x="30" y="112" width="90" height="20" rx="4" fill="var(--accent-1)"/>
+              <circle cx="42" cy="122" r="4" fill="var(--accent-warm)"/>
+            </g>
+          </svg></div></div>
+          <div class="feature-text">
+            <span class="feature-index">12</span>
+            <h3>News Channel Packages</h3>
+            <p>Full broadcast identity — stingers, tickers, studio graphics and show opens.</p>
+          </div>
+        </div>
+
+        <div class="feature-row" data-reveal>
+          <div class="feature-illo"><div class="illo-stage"><svg class="illo-svg" viewBox="0 0 200 160">
+            <circle cx="100" cy="80" r="34" fill="none" stroke="var(--paper)" stroke-width="2" stroke-dasharray="4 5"/>
+            <g class="illo-orbit">
+              <line x1="100" y1="80" x2="100" y2="40" stroke="var(--accent-2)" stroke-width="3"/>
+              <circle cx="100" cy="40" r="5" fill="var(--accent-2)"/>
+            </g>
+            <circle cx="100" cy="80" r="5" fill="var(--paper)"/>
+            <polygon points="100,114 92,128 108,128" fill="var(--accent-1)"/>
+          </svg></div></div>
+          <div class="feature-text">
+            <span class="feature-index">13</span>
+            <h3>Logo Design</h3>
+            <p>Distinct, versatile marks designed to work from favicon to billboard.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -260,7 +473,7 @@
       <a href="mailto:sreesivagfx@gmail.com" class="contact-email magnetic cursor-link">sreesivagfx@gmail.com</a>
 
       <div class="contact-socials">
-        <a href="#" class="magnetic cursor-link">
+        <a href="https://www.instagram.com/sl_tech_journal/" target="_blank" rel="noopener" class="magnetic cursor-link">
           <svg class="social-icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
           Instagram
         </a>

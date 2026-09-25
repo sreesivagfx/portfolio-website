@@ -16,6 +16,8 @@
   --accent-1: #5b6eff; /* indigo */
   --accent-2: #22d3ee; /* teal-cyan */
   --accent-warm: #fb7185; /* rose — used sparingly, as a single accent moment */
+  --paper: #eef0f6; /* light fill used inside illustration scenes */
+  --ink: #0c0c14; /* dark fill used inside illustration scenes */
 
   --grad-primary: linear-gradient(120deg, var(--accent-1), var(--accent-2));
   --grad-full: linear-gradient(120deg, var(--accent-1), var(--accent-2));
@@ -320,8 +322,33 @@ body.using-custom-cursor, body.using-custom-cursor a, body.using-custom-cursor b
   transform: translate(var(--magx), var(--magy));
   transition: transform 0.18s var(--ease-out);
 }
-.brand-mark { width: 30px; height: 30px; transition: width 0.3s var(--ease-out), height 0.3s var(--ease-out); }
-.site-header.is-scrolled .brand-mark { width: 24px; height: 24px; }
+.brand-mark { width: 32px; height: 32px; transition: width 0.3s var(--ease-out), height 0.3s var(--ease-out); }
+.site-header.is-scrolled .brand-mark { width: 26px; height: 26px; }
+.brand-word-a { color: var(--text); }
+.brand-word-b {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.logo-stroke {
+  stroke-dasharray: 6 5;
+  animation: logoFlow 3s linear infinite;
+}
+@keyframes logoFlow { to { stroke-dashoffset: -44; } }
+
+.logo-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: logoNodePulse 2.4s ease-in-out infinite;
+}
+.logo-node-a { animation-delay: 0s; }
+.logo-node-b { animation-delay: 1.2s; }
+@keyframes logoNodePulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+}
 
 .nav-desktop {
   display: flex;
@@ -747,6 +774,89 @@ body.using-custom-cursor, body.using-custom-cursor a, body.using-custom-cursor b
   padding: 12px 22px;
   align-self: flex-start;
 }
+
+/* ------------------------------ feature rows (illustrated) -------------------- */
+.feature-list { display: flex; flex-direction: column; margin-top: 24px; }
+.feature-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(30px, 5vw, 80px);
+  align-items: center;
+  padding-block: clamp(36px, 6vw, 56px);
+  border-top: 1px solid var(--line);
+}
+.feature-list .feature-row:last-child { border-bottom: 1px solid var(--line); }
+.feature-row.reverse .feature-illo { order: 2; }
+.feature-row.reverse .feature-text { order: 1; }
+
+.illo-stage {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+  background: linear-gradient(160deg, var(--surface), var(--bg-alt));
+  border: 1px solid var(--line);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s var(--ease-out), border-color 0.3s ease;
+}
+.feature-row:hover .illo-stage { transform: translateY(-4px); border-color: var(--accent-2); }
+.illo-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1.4px);
+  background-size: 16px 16px;
+}
+.illo-svg { position: relative; z-index: 1; width: 72%; height: 72%; overflow: visible; }
+
+.feature-index {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  letter-spacing: 0.1em;
+}
+.feature-text h3 {
+  margin-top: 14px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: -0.01em;
+}
+.feature-text p {
+  margin-top: 14px;
+  color: var(--text-dim);
+  font-size: 1rem;
+  max-width: 46ch;
+}
+
+@media (max-width: 760px) {
+  .feature-row { grid-template-columns: 1fr; }
+  .feature-row.reverse .feature-illo,
+  .feature-row.reverse .feature-text { order: initial; }
+}
+
+/* illustration loop animations — minimal, single clear motion per scene */
+@keyframes illoFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes illoSpin { to { transform: rotate(360deg); } }
+@keyframes illoPulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.15); opacity: 0.75; } }
+@keyframes illoBlink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+@keyframes illoSlide { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(18px); } }
+@keyframes illoBar { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.55); } }
+@keyframes illoRipple { 0% { opacity: 0.9; transform: scale(0.6); } 100% { opacity: 0; transform: scale(1.6); } }
+@keyframes illoBubble { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-18px); opacity: 0; } }
+@keyframes illoOrbit { to { transform: rotate(360deg); } }
+
+.illo-float { animation: illoFloat 2.4s ease-in-out infinite; }
+.illo-spin { animation: illoSpin 6s linear infinite; transform-origin: 100px 80px; }
+.illo-pulse { animation: illoPulse 1.8s ease-in-out infinite; }
+.illo-blink { animation: illoBlink 1.1s step-end infinite; }
+.illo-slide { animation: illoSlide 2.6s ease-in-out infinite; }
+.illo-bar { animation: illoBar 1.8s ease-in-out infinite; transform-origin: bottom; }
+.illo-ripple { animation: illoRipple 2.2s ease-out infinite; }
+.illo-bubble { animation: illoBubble 2.4s ease-in infinite; }
+.illo-orbit { animation: illoOrbit 5s linear infinite; transform-origin: 100px 80px; }
 
 /* ---------------------------------- work ----------------------------------- */
 .work-filters {
