@@ -972,12 +972,15 @@ body.using-custom-cursor, body.using-custom-cursor a, body.using-custom-cursor b
   line-height: 1.02;
 }
 .contact-email {
+  --magx: 0px;
+  --magy: 0px;
   display: inline-block;
   margin-top: 30px;
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 3vw, 1.6rem);
   padding-bottom: 6px;
   border-bottom: 2px solid var(--line);
+  transform: translate(var(--magx), var(--magy));
   transition: border-color 0.3s ease, transform 0.25s var(--ease-out);
 }
 .contact-email:hover { border-color: var(--accent-2); }
@@ -990,13 +993,20 @@ body.using-custom-cursor, body.using-custom-cursor a, body.using-custom-cursor b
   flex-wrap: wrap;
 }
 .contact-socials a {
+  --magx: 0px;
+  --magy: 0px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 12px 22px;
   border-radius: 999px;
   border: 1px solid var(--line);
   font-size: 0.9rem;
+  transform: translate(var(--magx), var(--magy));
   transition: border-color 0.25s ease, transform 0.25s var(--ease-spring);
 }
 .contact-socials a:hover { border-color: var(--accent-2); }
+.social-icon { width: 17px; height: 17px; flex-shrink: 0; }
 
 /* ---------------------------------- footer ---------------------------------- */
 .site-footer {
